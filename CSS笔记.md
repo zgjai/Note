@@ -73,3 +73,8 @@
 	* a:visited，用户已访问过的链接
 	* a:hover，当用户鼠标放在链接上时，必须放在前两者后
 	* a:active，链接被点击的那一刻，必须放在hover后   
+
+10. 列表
+	* 无序列表，列表项标记使用特殊图形，如小黑点、小方框等，list-style-type的值为circle、square等
+	* 有序列表，列表项标记使用数字或者字母，list-style-type的值为upper-roman、lower-alpha等
+	
