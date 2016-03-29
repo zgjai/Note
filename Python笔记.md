@@ -1,0 +1,26 @@
+##Python2.X
+
+
+1. 中文编码
+	在2.X版本中，若文件不指定编码，则默认使用ASCII格式；但在3.X中则默认使用UTF-8编码。所以若要在代码中包含中文，则需在文件开头加入：
+		
+		# -*- coding: UTF-8 -*-
+
+2. python代码块
+	python代码块不适用{}来控制类、函数等，而是使用模块缩进。
+	文件格式不对时报错：IndentationError
+	
+3. 标准数据类型
+	* Numbers （数字）
+		* int （有符号整型）
+		* long （长整型） 
+		* float （浮点型）
+		* complex （复数）
+		
+	* String （字符串）
+	* List （列表）
+	* Tuple （元组）
+	* Dictionary （字典）
+
+ 
+
