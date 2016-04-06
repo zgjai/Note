@@ -52,7 +52,7 @@
 	else:
 		执行语句4.....
 		
-	示例：  
+	示例:  
 		
 		flag = False
 		name = 'luren'
@@ -63,4 +63,48 @@
 			print name
 			
 
+6. while循环语句
+	格式：
+	while 判断条件:
+			执行语句.....
+	else:
+			执行语句.....
+			
+	示例: 
 	
+		#!/usr/bin/python
+		# -*- coding: UTF-8 -*-
+		
+		count=0
+		while count<5:
+			print count, " is less than 5"
+			count = count + 1
+		else:
+			print count, " is not less than 5"
+			
+
+7. for循环语句
+	格式1:
+	for iterating_var in sequence:
+		执行语句.....
+		
+	示例:
+	
+		#!/usr/bin/python
+		# -*- coding: UTF-8 -*-
+		
+		for letter in 'Python':
+			print '当前字母: ', letter 
+			
+	格式2:
+	for index in sequence.length:
+		执行语句.....
+		
+	示例:
+	
+		#!/usr/bin/python
+		# -*- coding: UTF-8 -*-
+		
+		fruits = ['banana', 'apple', 'mango']
+		for index in range(len(fruits)):
+			print '当前水果: ', fruits[index]
