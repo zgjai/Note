@@ -108,3 +108,7 @@
 		fruits = ['banana', 'apple', 'mango']
 		for index in range(len(fruits)):
 			print '当前水果: ', fruits[index]
+			
+8. pass语句  
+	pass语句是空语句，是为了保持程序结构的完整性，一般用作占位语句。  
+	
