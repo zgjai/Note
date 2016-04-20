@@ -317,3 +317,11 @@
 		
 				
 		
+19. Python函数
+		函数语法：
+		
+		def functionname( parameters ):
+			"函数_文档字符串"
+			function_suite
+			return [expression]
+	注意：Python是按引用传递参数的
