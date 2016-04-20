@@ -256,4 +256,37 @@
 		  
 #第四章 连接管理
  
+ 1. 常见的TCP套接字接口  
+ 	* s = socket(\<parameters>)   
+ 		创建一个新的、未命名、未关联的套接字
+ 		
+ 	* bind(s, \<local IP:port>)  
+ 		将套接字跟本地一个端口号和接口绑定
+ 		
+ 	* connect(s, \<remote IP:port>)  
+ 		创建一条连接本地套接字与远程主机及端口的连接
+ 		
+ 	* listen(s, ...)  
+ 		标识一个本地套接字，使其可以合法接受连接
+ 		
+ 	* s2 = accept(s)  
+ 		等待建立一条到本地端口的连接
+ 		
+ 	* n = read(s, buffer, n)  
+ 		尝试从缓冲区向套接字读取n个字节
+ 		
+ 	* n = write(s, buffer, n)  
+ 		尝试从套接字向缓冲区写入n个字节
+ 		
+ 	* close(s)  
+ 		完全关闭TCP连接
+ 		
+ 	* shutdown(s, \<side>)  
+ 		只关闭TCP连接的输入或输出端
+ 		
+ 	* getsockopt(s, ...)  
+ 		读取某个内部套接字配置选项的值
+ 		
+ 	* setsockopt(s, ...)  
+ 		修改某个内部套接字配置选项的值
 	
