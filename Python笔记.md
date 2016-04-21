@@ -317,11 +317,60 @@
 		
 				
 		
-19. Python函数
+19. Python函数  
 		函数语法：
 		
 		def functionname( parameters ):
 			"函数_文档字符串"
 			function_suite
 			return [expression]
-	注意：Python是按引用传递参数的
+	注意：Python是按引用传递参数的  
+		参数类型：  
+		
+	*  必备参数  
+		必备参数必须以正确的顺序传入函数，同C、Java 
+	*  关键字参数  
+		关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。使用关键字参数，允许函数调用时参数的顺序与声明时不一致，因为Python解释器能够用参数名匹配参数值。  
+	*  默认参数  
+		亦可以称为缺省参数，同C、Java
+	*  不定长参数  
+		可能需要一个函数能处理比当初声明时更多的参数，这些参数叫做不定长参数，和上述参数不同的是，声明时不会命名该参数。  
+		基本语法：
+		
+			def functionname(\[formal_args, \] *var_args_tuple ):
+			"函数_文档字符串"
+			function_suite
+			return [expression]
+		示例：
+		
+			#!/usr/bin/python
+			# -*- coding: UTF-8 -*-
+			
+			def printinfo( arg1, *vartuple):
+				"打印任何传入的参数"
+				print "输出："
+				print arg1
+				for var in vartuple:
+					print var
+				return;
+				
+			printinfo( 10 );
+			printinfo( 70, 60, 50 );
+			
+		结果：
+		
+			输出：
+			10
+			输出：
+			70
+			60
+			50
+			
+			
+	#####匿名函数
+	Python使用lambda来创建匿名函数。 
+	 
+	* lambda只是一个表达式，函数体比def简单很多
+	* lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
+	* lambda函数拥有自己的命名空间，且不能访问自有参数列表之外或全局命名空间里的参数。
+	* 虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
