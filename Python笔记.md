@@ -374,3 +374,35 @@
 	* lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。
 	* lambda函数拥有自己的命名空间，且不能访问自有参数列表之外或全局命名空间里的参数。
 	* 虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
+	示例：
+	
+			#!/usr/bin/python
+			# -*- coding: UTF-8 -*-
+			
+			sum = lambda arg1, arg2: arg1 + arg2;
+			print "相加后的值为：", sum( 10, 20 )
+			print "相加后的值为：", sum( 20, 20 )
+			
+	结果：
+	
+			相加后的值为：30
+			相加后的值为：40
+			
+
+20. Python模块  
+		简单地说，模块就是一个保存了Python代码的文件。模块里能定义函数，类和变量。模块里也能包含可执行的代码。  
+		想使用Python源文件，只需在另一个源文件里执行import语句，语法如下：
+		
+		import module1[, module2[,... moduleN]]
+		
+	Python的from语句可以从模块中导入一个指定的部分到当前命名空间中。示例，导入模块fib的fibonacci函数：
+	
+		from fib import fibonacci
+		
+	当你导入一个模块，Python解析器对模块位置的搜索顺序是：  
+	* 当前目录
+	* 在shell变量PYTHONPATH下的每个目录
+	* 查看默认路径 
+	
+	#####命名空间和作用域  
+		
