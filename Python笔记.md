@@ -437,3 +437,36 @@
 	* reload()函数  
 		当一个模块被导入到一个脚本里，模块顶层部分的代码只会被执行一次，因此，如果你想重新执行模块里顶层部分的代码，可以用reload()函数，该函数会导入之前导入过的模块。
 		
+
+21. Python文件I/O  
+	* 读取键盘输入
+		* raw_input函数
+			raw_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）：
+			
+				#!/usr/bin/python
+				# -*- coding: UTF-8 -*-
+				
+				str = raw_input("请输入：");
+				print "你输入的内容是：", str
+			
+		* input函数
+			input([prompt])函数和raw_input([prompt])函数基本类似，但是input可以接收一个Python表达式作为输入，并将运算结果返回。
+			
+	* 打开和关闭文件  
+			Python提供了必要的函数和方法进行默认情况下的文件基本操作，可以使用file对象做大部分的文件操作。  
+		* open函数
+			必须先用Python内置的open()函数打开一个文件，创建一个file对象，相关的方法才可以调用它进行读写。  
+			语法：
+			
+				file object = open(file_name [, access_mode] [, buffering])
+				
+			各个参数的细节如下：
+			file_name：是一个包含了你要访问的文件名称的字符串值
+			access_mode：决定了打开文件的模式：只读，写入，追加等。默认是只读（r）
+			buffering：如果buffering的值被设为0，就不会寄存。如果buffering的值取1，访问文件时会寄存行。如果将buffering的值设为大于1的整数，表明了这就是寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。  
+		* File对象的属性  
+			一个文件被打开后，根据这个file对象，可以得到有关该文件的各种信息。
+			* file.closed  如果文件被关闭则返回true，否则返回false
+			* file.mode  返回被打开文件的访问模式
+			* file.name  返回文件的名称
+			* file.softspace  如果用print输出后，必须跟一个空格符，则返回false，否则返回true。
