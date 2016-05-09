@@ -440,8 +440,8 @@
 
 21. Python文件I/O  
 	* 读取键盘输入
-		* raw_input函数
-			raw_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）：
+		* raw\_input函数  
+			raw\_input([prompt])函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）：
 			
 				#!/usr/bin/python
 				# -*- coding: UTF-8 -*-
@@ -449,35 +449,35 @@
 				str = raw_input("请输入：");
 				print "你输入的内容是：", str
 			
-		* input函数
+		* input函数  
 			input([prompt])函数和raw_input([prompt])函数基本类似，但是input可以接收一个Python表达式作为输入，并将运算结果返回。
 			
 	* 打开和关闭文件  
-			Python提供了必要的函数和方法进行默认情况下的文件基本操作，可以使用file对象做大部分的文件操作。  
-		* open函数
+			Python提供了必要的函数和方法进行默认情况下的文件基本操作，可以使用file对象做大部分的文件操作。    
+		* open函数  
 			必须先用Python内置的open()函数打开一个文件，创建一个file对象，相关的方法才可以调用它进行读写。  
 			语法：
 			
 				file object = open(file_name [, access_mode] [, buffering])
 				
-			各个参数的细节如下：
-			file_name：是一个包含了你要访问的文件名称的字符串值
-			access_mode：决定了打开文件的模式：只读，写入，追加等。默认是只读（r）
+			各个参数的细节如下：  
+			file_name：是一个包含了你要访问的文件名称的字符串值  
+			access_mode：决定了打开文件的模式：只读，写入，追加等。默认是只读（r）  
 			buffering：如果buffering的值被设为0，就不会寄存。如果buffering的值取1，访问文件时会寄存行。如果将buffering的值设为大于1的整数，表明了这就是寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。
 			  
-		* File对象的属性  
+		* File对象的属性    
 			一个文件被打开后，根据这个file对象，可以得到有关该文件的各种信息。
 			* file.closed  如果文件被关闭则返回true，否则返回false
 			* file.mode  返回被打开文件的访问模式
 			* file.name  返回文件的名称
-			* file.softspace  如果用print输出后，必须跟一个空格符，则返回false，否则返回true。
-		* close()函数
+			* file.softspace  如果用print输出后，必须跟一个空格符，则返回false，否则返回true。  
+		* close()函数  
 			File对象的close()方法刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。当一个文件对象的引用被重新指定给另一个文件时，Python会关闭之前的文件。
 			语法：
 			
 				fileObject.close();
 				
-		* write()函数
+		* write()函数  
 			write()函数可将任何字符串写入一个打开的文件。
 			示例：
 			
@@ -489,10 +489,29 @@
 				fo.write( "www.runoob.com!\n" );
 				fo.close();
 		
-		* read()函数
+		* read()函数  
 			read()函数从一个打开的文件中读取一个字符串
 			语法：
 			
 				fileObject.read([count]);
 				
 			在这里，被传递的参数是要从已打开的文件中读取的字节数。该方法从文件的开头开始读入，如果没有传入count，它会尝试尽可能多地读取更多的内容，很可能是直到文件的末尾。
+			
+		* 文件定位  
+			tell()方法告诉你文件内的当前位置。  
+			seek( offset [, from] )方法改变当前文件的位置。Offset变量表示要移动的字节数。From变量指定开始移动字节的参考位置。  
+			如果from被设为0，这意味着将文件的开头作为移动字节的参考位置。如果设为1，则使用当前的位置作为参考位置。如果被设为2，那么以该文件的末尾作为参考位置。  
+			
+		* 重命名和删除文件  
+			Python的os模块提供了帮助执行文件处理操作的方法，比如重命名和删除文件。要使用这个模块，必须先导入它，然后才可以调用相关的各种功能。
+			rename()方法：  
+			语法：
+			
+				os.rename(current_file_name, new_file_name)
+				
+			remove()方法：  
+			语法：  
+			
+				os.remove(file_name)
+				
+			
